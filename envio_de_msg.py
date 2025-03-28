@@ -1,4 +1,4 @@
-import pandas as pd
+'import pandas as pd
 import pywhatkit as kit
 
 planilha = r"C:\Users\Jonatha\Desktop\Jonatha\programação\Envio de Msg whatsapp automática.xlsx"
