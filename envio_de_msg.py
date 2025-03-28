@@ -1,4 +1,4 @@
-'import pandas as pd
+import pandas as pd
 import pywhatkit as kit
 
 planilha = r"C:\Users\Jonatha\Desktop\Jonatha\programação\Envio de Msg whatsapp automática.xlsx"
@@ -14,7 +14,7 @@ if cmensagem in data.columns and cDDD in data.columns:
         tel1 = f[cnumero]
         tel2 = f[cnumero1]
         if type(tel) == float or type(tel2) == float or type(tel1) == float:
-            print(f'A coluna {cnumero} não está preenchida.')
+            print(f'O número não está devidamente preenchido.')
         else:
             msg = f[cmensagem]
             nome = f['Nome']
@@ -28,8 +28,8 @@ if cmensagem in data.columns and cDDD in data.columns:
                     mensagem_final = 'Olá ' + nome + ' ' + sobrenome + msg + ' - ' + link_dynms
                     tel = '+' + str(tel).replace(" ", "").strip() + str(tel1).replace(" ", "").strip() + str(tel2).replace(" ", "").strip() 
                     print(mensagem_final)
-                    #kit.sendwhatmsg_instantly(tel, mensagem_final) 
+                    kit.sendwhatmsg_instantly(tel, mensagem_final) 
                 except Exception as e:
                     print(f'Erro ao abrir {i}: {e}')
 else:
-    print(f'As colunas "{cmensagem}" e/ou "{cDDD}" não foram encontradas.')
+    print(f'A coluna "{cmensagem}" não foi encontrada.')
